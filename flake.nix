@@ -1,0 +1,39 @@
+{
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
+        selfPackages = self.packages.${system};
+        inherit (selfPackages) vapoursynthPlugins;
+      in
+      {
+        packages = {
+          # Available outside of vapoursynthPlugins as it provides ffmsindex
+          ffms = vapoursynthPlugins.ffms;
+
+          vapoursynthPlugins = {
+            ffms = (pkgs.ffms.overrideAttrs {
+              version = "unstable-2023-07-22";
+              src = pkgs.fetchFromGitHub {
+                owner = "FFMS";
+                repo = "ffms2";
+                rev = "ef243ab40b8d4b6d18874c6cef0da1a2f55a6a45";
+                hash = "sha256-w2rkHYOMyBMA8tdAoBtRkMvxrNXYuUbXJ4aimQXkl5w=";
+              };
+            }).override {
+              ffmpeg_4 = pkgs.ffmpeg_6;
+            };
+          };
+        };
+      }
+    );
+}
