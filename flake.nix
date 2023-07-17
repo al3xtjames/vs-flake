@@ -21,6 +21,8 @@
           ffms = vapoursynthPlugins.ffms;
 
           vapoursynthPlugins = {
+            addgrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/addgrain { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
