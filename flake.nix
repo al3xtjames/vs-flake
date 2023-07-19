@@ -23,6 +23,8 @@
           vapoursynthPlugins = {
             addgrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/addgrain { };
 
+            akarin = pkgs.callPackage ./pkgs/vapoursynth-plugins/akarin { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
