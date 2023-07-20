@@ -21,6 +21,8 @@
           ffms = vapoursynthPlugins.ffms;
 
           vapoursynthPlugins = {
+            adaptivegrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/adaptivegrain { };
+
             addgrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/addgrain { };
 
             akarin = pkgs.callPackage ./pkgs/vapoursynth-plugins/akarin { };
