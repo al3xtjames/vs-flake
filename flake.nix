@@ -27,6 +27,8 @@
 
             akarin = pkgs.callPackage ./pkgs/vapoursynth-plugins/akarin { };
 
+            awarpsharp2 = pkgs.callPackage ./pkgs/vapoursynth-plugins/awarpsharp2 { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
