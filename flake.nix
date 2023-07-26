@@ -31,6 +31,8 @@
 
             awarpsharp2-sf = pkgs.callPackage ./pkgs/vapoursynth-plugins/awarpsharp2-sf { };
 
+            bestsource = pkgs.callPackage ./pkgs/vapoursynth-plugins/bestsource { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
