@@ -33,6 +33,8 @@
 
             bestsource = pkgs.callPackage ./pkgs/vapoursynth-plugins/bestsource { };
 
+            bilateral = pkgs.callPackage ./pkgs/vapoursynth-plugins/bilateral { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
