@@ -35,6 +35,8 @@
 
             bilateral = pkgs.callPackage ./pkgs/vapoursynth-plugins/bilateral { };
 
+            bm3d = pkgs.callPackage ./pkgs/vapoursynth-plugins/bm3d { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
