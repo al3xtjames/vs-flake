@@ -37,6 +37,8 @@
 
             bm3d = pkgs.callPackage ./pkgs/vapoursynth-plugins/bm3d { };
 
+            bm3dcuda = pkgs.callPackage ./pkgs/vapoursynth-plugins/bm3dcuda { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
