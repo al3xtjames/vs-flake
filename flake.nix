@@ -212,6 +212,10 @@
               vstools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstools { };
 
               vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
+
+              vstaambk = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstaambk {
+                inherit vapoursynthPlugins;
+              };
             };
           };
         }
