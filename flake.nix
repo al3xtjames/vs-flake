@@ -47,6 +47,8 @@
 
             ctmf = pkgs.callPackage ./pkgs/vapoursynth-plugins/ctmf { };
 
+            dctfilter = pkgs.callPackage ./pkgs/vapoursynth-plugins/dctfilter { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
