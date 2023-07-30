@@ -26,6 +26,10 @@
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
 
+          getnative = python3Packages.callPackage ./pkgs/getnative {
+            inherit vapoursynthPlugins;
+          };
+
           yuuno = python3Packages.callPackage ./pkgs/yuuno { };
 
           vapoursynthLibs = {
