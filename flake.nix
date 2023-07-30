@@ -111,6 +111,8 @@
             remapframes = pkgs.callPackage ./pkgs/vapoursynth-plugins/remapframes { };
 
             removegrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/removegrain { };
+
+            sangnom = pkgs.callPackage ./pkgs/vapoursynth-plugins/sangnom { };
           };
         };
       }
