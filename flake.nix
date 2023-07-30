@@ -82,6 +82,8 @@
             fillborders = pkgs.callPackage ./pkgs/vapoursynth-plugins/fillborders { };
 
             fluxsmooth = pkgs.callPackage ./pkgs/vapoursynth-plugins/fluxsmooth { };
+
+            fmtconv = pkgs.callPackage ./pkgs/vapoursynth-plugins/fmtconv { };
           };
         };
       }
