@@ -112,6 +112,8 @@
 
             removegrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/removegrain { };
 
+            removegrain-sf = pkgs.callPackage ./pkgs/vapoursynth-plugins/removegrain-sf { };
+
             sangnom = pkgs.callPackage ./pkgs/vapoursynth-plugins/sangnom { };
           };
         };
