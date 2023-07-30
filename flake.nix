@@ -45,6 +45,8 @@
 
             cas = pkgs.callPackage ./pkgs/vapoursynth-plugins/cas { };
 
+            ctmf = pkgs.callPackage ./pkgs/vapoursynth-plugins/ctmf { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
