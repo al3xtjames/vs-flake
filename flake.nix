@@ -182,6 +182,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              hardaap2 = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/hardaap2 {
+                inherit vapoursynthPlugins;
+              };
+
               havsfunc = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/havsfunc {
                 inherit vapoursynthPlugins;
               };
