@@ -181,6 +181,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              vsrgtools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsrgtools {
+                inherit vapoursynthPlugins;
+              };
+
               vstools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstools { };
 
               vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
