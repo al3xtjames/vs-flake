@@ -97,6 +97,8 @@
 
             # Upstream switched to meson, which is why this isn't an override
             mvtools = pkgs.callPackage ./pkgs/vapoursynth-plugins/mvtools { };
+
+            neo-f3kdb = pkgs.callPackage ./pkgs/vapoursynth-plugins/neo-f3kdb { };
           };
         };
       }
