@@ -92,6 +92,8 @@
             imwri = pkgs.callPackage ./pkgs/vapoursynth-plugins/imwri { };
 
             knlmeanscl = pkgs.callPackage ./pkgs/vapoursynth-plugins/knlmeanscl { };
+
+            miscfilters-obsolete = pkgs.callPackage ./pkgs/vapoursynth-plugins/miscfilters-obsolete { };
           };
         };
       }
