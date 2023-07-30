@@ -84,6 +84,8 @@
             fluxsmooth = pkgs.callPackage ./pkgs/vapoursynth-plugins/fluxsmooth { };
 
             fmtconv = pkgs.callPackage ./pkgs/vapoursynth-plugins/fmtconv { };
+
+            fpng = pkgs.callPackage ./pkgs/vapoursynth-plugins/fpng { };
           };
         };
       }
