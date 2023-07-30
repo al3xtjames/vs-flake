@@ -149,6 +149,10 @@
             in {
               adjust = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/adjust { };
 
+              awsmfunc = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/awsmfunc {
+                inherit vapoursynthPlugins;
+              };
+
               descale = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/descale {
                 inherit vapoursynthPlugins;
               };
