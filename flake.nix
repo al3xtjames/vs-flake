@@ -169,6 +169,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              vsaa = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsaa {
+                inherit vapoursynthPlugins;
+              };
+
               vsexprtools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsexprtools {
                 inherit vapoursynthPlugins;
               };
