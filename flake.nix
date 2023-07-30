@@ -109,6 +109,8 @@
             placebo = pkgs.callPackage ./pkgs/vapoursynth-plugins/placebo { };
 
             remapframes = pkgs.callPackage ./pkgs/vapoursynth-plugins/remapframes { };
+
+            removegrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/removegrain { };
           };
         };
       }
