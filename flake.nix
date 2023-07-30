@@ -129,6 +129,8 @@
             ttempsmooth = pkgs.callPackage ./pkgs/vapoursynth-plugins/ttempsmooth { };
 
             wnnm = pkgs.callPackage ./pkgs/vapoursynth-plugins/wnnm { };
+
+            znedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/znedi3 { };
           };
         };
       }
