@@ -143,6 +143,12 @@
             wnnm = pkgs.callPackage ./pkgs/vapoursynth-plugins/wnnm { };
 
             znedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/znedi3 { };
+
+            pythonModules = let 
+              python3Packages = pkgs.vapoursynth.python3.pkgs;
+            in {
+              adjust = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/adjust { };
+            };
           };
         }
       );
