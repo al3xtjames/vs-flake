@@ -125,6 +125,8 @@
             temporalmedian = pkgs.callPackage ./pkgs/vapoursynth-plugins/temporalmedian { };
 
             trt = pkgs.callPackage ./pkgs/vapoursynth-plugins/trt { };
+
+            ttempsmooth = pkgs.callPackage ./pkgs/vapoursynth-plugins/ttempsmooth { };
           };
         };
       }
