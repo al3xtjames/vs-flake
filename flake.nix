@@ -99,6 +99,8 @@
             mvtools = pkgs.callPackage ./pkgs/vapoursynth-plugins/mvtools { };
 
             neo-f3kdb = pkgs.callPackage ./pkgs/vapoursynth-plugins/neo-f3kdb { };
+
+            nlm-cuda = pkgs.callPackage ./pkgs/vapoursynth-plugins/nlm-cuda { };
           };
         };
       }
