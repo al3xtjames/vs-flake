@@ -161,6 +161,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              nnedi3-resample = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/nnedi3-resample {
+                inherit vapoursynthPlugins;
+              };
+
               vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
             };
           };
