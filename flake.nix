@@ -148,6 +148,8 @@
               python3Packages = pkgs.vapoursynth.python3.pkgs;
             in {
               adjust = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/adjust { };
+
+              vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
             };
           };
         }
