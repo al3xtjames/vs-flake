@@ -204,6 +204,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              vsdeband = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsdeband {
+                inherit vapoursynthPlugins;
+              };
+
               vsdenoise = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsdenoise {
                 inherit vapoursynthPlugins;
               };
