@@ -59,6 +59,8 @@
 
             dpid = pkgs.callPackage ./pkgs/vapoursynth-plugins/dpid { };
 
+            eedi2 = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi2 { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
