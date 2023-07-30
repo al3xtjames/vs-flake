@@ -119,6 +119,8 @@
             subtext = pkgs.callPackage ./pkgs/vapoursynth-plugins/subtext { };
 
             tcanny = pkgs.callPackage ./pkgs/vapoursynth-plugins/tcanny { };
+
+            tedgemask = pkgs.callPackage ./pkgs/vapoursynth-plugins/tedgemask { };
           };
         };
       }
