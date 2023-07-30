@@ -162,6 +162,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              cooldegrain = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/cooldegrain {
+                inherit vapoursynthPlugins;
+              };
+
               descale = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/descale {
                 inherit vapoursynthPlugins;
               };
