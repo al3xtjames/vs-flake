@@ -1,0 +1,26 @@
+diff --git a/yuuno_jupyterlab/__init__.py b/yuuno_jupyterlab/__init__.py
+index 59e126d..d49f472 100644
+--- a/yuuno_jupyterlab/__init__.py
++++ b/yuuno_jupyterlab/__init__.py
+@@ -6,7 +6,7 @@ from ._version import __version__
+ 
+ HERE = Path(__file__).parent.resolve()
+ 
+-with (HERE / ".." / "yuuno-jupyterlab-js" / "package.json").open() as fid:
++with (HERE / ".." / "yuuno_jupyterlab" / "static" / "package.json").open() as fid:
+     data = json.load(fid)
+ 
+ def _jupyter_labextension_paths():
+diff --git a/yuuno_jupyterlab/_version.py b/yuuno_jupyterlab/_version.py
+index dcd14d3..86cf106 100644
+--- a/yuuno_jupyterlab/_version.py
++++ b/yuuno_jupyterlab/_version.py
+@@ -6,7 +6,7 @@ __all__ = ["__version__"]
+ def _fetchVersion():
+     HERE = Path(__file__).parent.resolve()
+ 
+-    for settings in  [HERE / ".." / "yuuno-jupyterlab-js" / "package.json"]:
++    for settings in  [HERE / ".." / "yuuno_jupyterlab" / "static" / "package.json"]:
+         try:
+             with settings.open() as f:
+                 version = json.load(f)["version"]

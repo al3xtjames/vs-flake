@@ -19,10 +19,14 @@
           };
 
           selfPackages = self.packages.${system};
+          python3Packages = pkgs.vapoursynth.python3.pkgs;
+
           inherit (selfPackages) vapoursynthLibs vapoursynthPlugins;
         in {
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
+
+          yuuno = python3Packages.callPackage ./pkgs/yuuno { };
 
           vapoursynthLibs = {
             vsfilterscript = pkgs.callPackage ./pkgs/vapoursynth-libs/vsfilterscript { };
@@ -144,9 +148,7 @@
 
             znedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/znedi3 { };
 
-            pythonModules = let 
-              python3Packages = pkgs.vapoursynth.python3.pkgs;
-            in {
+            pythonModules = {
               adjust = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/adjust { };
 
               awsmfunc = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/awsmfunc {
