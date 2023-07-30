@@ -103,6 +103,8 @@
             nlm-cuda = pkgs.callPackage ./pkgs/vapoursynth-plugins/nlm-cuda { };
 
             nlq = pkgs.callPackage ./pkgs/vapoursynth-plugins/nlq { };
+
+            nnedi3cl = pkgs.callPackage ./pkgs/vapoursynth-plugins/nnedi3cl { };
           };
         };
       }
