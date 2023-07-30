@@ -64,6 +64,8 @@
 
             cas = pkgs.callPackage ./pkgs/vapoursynth-plugins/cas { };
 
+            chickendream = pkgs.callPackage ./pkgs/vapoursynth-plugins/chickendream { };
+
             ctmf = pkgs.callPackage ./pkgs/vapoursynth-plugins/ctmf { };
 
             dctfilter = pkgs.callPackage ./pkgs/vapoursynth-plugins/dctfilter { };
