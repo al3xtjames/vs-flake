@@ -8,19 +8,19 @@
       inherit (nixpkgs) lib;
 
       systems = [ "x86_64-linux" ];
-      forEachSystem = systems: f: lib.genAttrs systems (system: f system);
+      pkgsFor = system: import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+          cudaSupport = true;
+        };
+      };
+
+      forEachSystem = systems: f: lib.genAttrs systems (system: f system (pkgsFor system));
       forAllSystems = forEachSystem systems;
     in {
-      packages = forAllSystems (system:
+      packages = forAllSystems (system: pkgs:
         let
-          pkgs = import nixpkgs {
-            inherit system;
-            config = {
-              allowUnfree = true;
-              cudaSupport = true;
-            };
-          };
-
           selfPackages = self.packages.${system};
           python3Packages = pkgs.vapoursynth.python3.pkgs;
 
@@ -234,6 +234,27 @@
                 inherit vapoursynthPlugins;
               };
             };
+          };
+        }
+      );
+
+      devShells = forAllSystems (system: pkgs:
+        let
+          selfPackages = self.packages.${system};
+          allPackages = lib.filter
+            (x: lib.attrsets.isDerivation x && x != selfPackages.yuuno)
+            (lib.attrValues selfPackages);
+
+          allPlugins = lib.filter
+            (x: lib.attrsets.isDerivation x)
+            (lib.attrValues selfPackages.vapoursynthPlugins) ++
+            lib.attrValues selfPackages.vapoursynthPlugins.pythonModules;
+        in {
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; allPackages ++ [
+              (vapoursynth.withPlugins allPlugins)
+              (selfPackages.yuuno.withPlugins allPlugins)
+            ];
           };
         }
       );
