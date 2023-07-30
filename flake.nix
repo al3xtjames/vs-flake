@@ -153,6 +153,8 @@
 
             temporalmedian = pkgs.callPackage ./pkgs/vapoursynth-plugins/temporalmedian { };
 
+            tivtc = pkgs.callPackage ./pkgs/vapoursynth-plugins/tivtc { };
+
             tmaskcleaner = pkgs.callPackage ./pkgs/vapoursynth-plugins/tmaskcleaner { };
 
             trt = pkgs.callPackage ./pkgs/vapoursynth-plugins/trt { };
