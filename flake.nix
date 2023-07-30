@@ -157,6 +157,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              mvsfunc = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/mvsfunc {
+                inherit vapoursynthPlugins;
+              };
+
               vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
             };
           };
