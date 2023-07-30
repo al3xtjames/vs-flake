@@ -44,6 +44,8 @@
 
             addgrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/addgrain { };
 
+            addnoise = pkgs.callPackage ./pkgs/vapoursynth-plugins/addnoise { };
+
             akarin = pkgs.callPackage ./pkgs/vapoursynth-plugins/akarin { };
 
             awarpsharp2 = pkgs.callPackage ./pkgs/vapoursynth-plugins/awarpsharp2 { };
