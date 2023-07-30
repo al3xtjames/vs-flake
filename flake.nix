@@ -94,6 +94,9 @@
             knlmeanscl = pkgs.callPackage ./pkgs/vapoursynth-plugins/knlmeanscl { };
 
             miscfilters-obsolete = pkgs.callPackage ./pkgs/vapoursynth-plugins/miscfilters-obsolete { };
+
+            # Upstream switched to meson, which is why this isn't an override
+            mvtools = pkgs.callPackage ./pkgs/vapoursynth-plugins/mvtools { };
           };
         };
       }
