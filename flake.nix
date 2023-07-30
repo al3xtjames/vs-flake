@@ -13,12 +13,16 @@
         };
 
         selfPackages = self.packages.${system};
-        inherit (selfPackages) vapoursynthPlugins;
+        inherit (selfPackages) vapoursynthLibs vapoursynthPlugins;
       in
       {
         packages = {
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
+
+          vapoursynthLibs = {
+            vsfilterscript = pkgs.callPackage ./pkgs/vapoursynth-libs/vsfilterscript { };
+          };
 
           vapoursynthPlugins = {
             adaptivegrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/adaptivegrain { };
@@ -97,6 +101,10 @@
 
             # Upstream switched to meson, which is why this isn't an override
             mvtools = pkgs.callPackage ./pkgs/vapoursynth-plugins/mvtools { };
+
+            mvtools-sf = pkgs.callPackage ./pkgs/vapoursynth-plugins/mvtools-sf {
+              inherit (vapoursynthLibs) vsfilterscript;
+            };
 
             neo-f3kdb = pkgs.callPackage ./pkgs/vapoursynth-plugins/neo-f3kdb { };
 
