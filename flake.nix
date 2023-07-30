@@ -61,6 +61,8 @@
 
             eedi2 = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi2 { };
 
+            eedi2cuda = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi2cuda { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
