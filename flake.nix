@@ -173,6 +173,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              vsdenoise = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsdenoise {
+                inherit vapoursynthPlugins;
+              };
+
               vsexprtools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsexprtools {
                 inherit vapoursynthPlugins;
               };
