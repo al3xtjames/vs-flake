@@ -127,6 +127,8 @@
             trt = pkgs.callPackage ./pkgs/vapoursynth-plugins/trt { };
 
             ttempsmooth = pkgs.callPackage ./pkgs/vapoursynth-plugins/ttempsmooth { };
+
+            wnnm = pkgs.callPackage ./pkgs/vapoursynth-plugins/wnnm { };
           };
         };
       }
