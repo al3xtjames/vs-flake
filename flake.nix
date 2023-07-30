@@ -107,6 +107,8 @@
             nnedi3cl = pkgs.callPackage ./pkgs/vapoursynth-plugins/nnedi3cl { };
 
             placebo = pkgs.callPackage ./pkgs/vapoursynth-plugins/placebo { };
+
+            remapframes = pkgs.callPackage ./pkgs/vapoursynth-plugins/remapframes { };
           };
         };
       }
