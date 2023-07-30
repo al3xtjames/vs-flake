@@ -177,6 +177,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              vsmasktools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsmasktools {
+                inherit vapoursynthPlugins;
+              };
+
               vsmlrt = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsmlrt {
                 inherit vapoursynthPlugins;
               };
