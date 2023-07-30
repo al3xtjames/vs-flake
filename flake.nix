@@ -53,6 +53,8 @@
 
             descale = pkgs.callPackage ./pkgs/vapoursynth-plugins/descale { };
 
+            dfttest = pkgs.callPackage ./pkgs/vapoursynth-plugins/dfttest { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
