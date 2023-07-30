@@ -169,6 +169,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              vsexprtools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsexprtools {
+                inherit vapoursynthPlugins;
+              };
+
               vsmlrt = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsmlrt {
                 inherit vapoursynthPlugins;
               };
