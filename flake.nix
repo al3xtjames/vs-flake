@@ -121,6 +121,8 @@
             tcanny = pkgs.callPackage ./pkgs/vapoursynth-plugins/tcanny { };
 
             tedgemask = pkgs.callPackage ./pkgs/vapoursynth-plugins/tedgemask { };
+
+            temporalmedian = pkgs.callPackage ./pkgs/vapoursynth-plugins/temporalmedian { };
           };
         };
       }
