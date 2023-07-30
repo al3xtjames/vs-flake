@@ -80,6 +80,8 @@
             fft3dfilter = pkgs.callPackage ./pkgs/vapoursynth-plugins/fft3dfilter { };
 
             fillborders = pkgs.callPackage ./pkgs/vapoursynth-plugins/fillborders { };
+
+            fluxsmooth = pkgs.callPackage ./pkgs/vapoursynth-plugins/fluxsmooth { };
           };
         };
       }
