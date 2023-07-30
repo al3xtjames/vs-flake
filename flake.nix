@@ -123,6 +123,8 @@
             tedgemask = pkgs.callPackage ./pkgs/vapoursynth-plugins/tedgemask { };
 
             temporalmedian = pkgs.callPackage ./pkgs/vapoursynth-plugins/temporalmedian { };
+
+            trt = pkgs.callPackage ./pkgs/vapoursynth-plugins/trt { };
           };
         };
       }
