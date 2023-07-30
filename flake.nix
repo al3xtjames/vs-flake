@@ -86,6 +86,8 @@
             fmtconv = pkgs.callPackage ./pkgs/vapoursynth-plugins/fmtconv { };
 
             fpng = pkgs.callPackage ./pkgs/vapoursynth-plugins/fpng { };
+
+            hqdn3d = pkgs.callPackage ./pkgs/vapoursynth-plugins/hqdn3d { };
           };
         };
       }
