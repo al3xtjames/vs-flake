@@ -2,9 +2,10 @@
 , stdenv
 , fetchFromGitHub
 , cmake
-, cudaPackages
+, cudaPackages ? { }
 , vapoursynth
-, cudaSupport ? true
+, config
+, cudaSupport ? config.cudaSupport
 , gccVectorSupport ? false
 }:
 

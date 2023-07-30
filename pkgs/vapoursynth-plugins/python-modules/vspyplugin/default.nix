@@ -5,7 +5,8 @@
 , vapoursynthPlugins
 , cupy
 , numpy
-, cudaSupport ? true
+, config
+, cudaSupport ? config.cudaSupport
 }:
 
 let
