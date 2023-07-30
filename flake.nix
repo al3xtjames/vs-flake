@@ -55,6 +55,8 @@
 
             dfttest = pkgs.callPackage ./pkgs/vapoursynth-plugins/dfttest { };
 
+            dfttest2 = pkgs.callPackage ./pkgs/vapoursynth-plugins/dfttest2 { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
