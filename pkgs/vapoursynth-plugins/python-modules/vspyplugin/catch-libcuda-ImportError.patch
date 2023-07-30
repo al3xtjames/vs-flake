@@ -1,0 +1,26 @@
+diff --git a/vspyplugin/cuda.py b/vspyplugin/cuda.py
+index a47d8c9..3d4b3bf 100644
+--- a/vspyplugin/cuda.py
++++ b/vspyplugin/cuda.py
+@@ -348,7 +348,7 @@ try:
+         ...
+ 
+     this_backend.set_available(True)
+-except ModuleNotFoundError as e:
++except (ImportError, ModuleNotFoundError) as e:
+     this_backend.set_available(False, e)
+ 
+     class PyPluginCudaBase(PyPluginUnavailableBackendBase[FD_T, DT_T]):  # type: ignore
+diff --git a/vspyplugin/cupy.py b/vspyplugin/cupy.py
+index b8ccf19..c7b0fea 100644
+--- a/vspyplugin/cupy.py
++++ b/vspyplugin/cupy.py
+@@ -266,7 +266,7 @@ try:
+             return output_func
+ 
+     this_backend.set_available(True)
+-except ModuleNotFoundError as e:
++except (ImportError, ModuleNotFoundError) as e:
+     this_backend.set_available(False, e)
+ 
+     class PyPluginCupyBase(PyPluginUnavailableBackendBase[FD_T, DT_T]):  # type: ignore
