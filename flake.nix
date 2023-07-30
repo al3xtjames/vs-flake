@@ -115,6 +115,10 @@
             removegrain-sf = pkgs.callPackage ./pkgs/vapoursynth-plugins/removegrain-sf { };
 
             sangnom = pkgs.callPackage ./pkgs/vapoursynth-plugins/sangnom { };
+
+            subtext = pkgs.callPackage ./pkgs/vapoursynth-plugins/subtext { };
+
+            tcanny = pkgs.callPackage ./pkgs/vapoursynth-plugins/tcanny { };
           };
         };
       }
