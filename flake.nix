@@ -88,6 +88,8 @@
             fpng = pkgs.callPackage ./pkgs/vapoursynth-plugins/fpng { };
 
             hqdn3d = pkgs.callPackage ./pkgs/vapoursynth-plugins/hqdn3d { };
+
+            imwri = pkgs.callPackage ./pkgs/vapoursynth-plugins/imwri { };
           };
         };
       }
