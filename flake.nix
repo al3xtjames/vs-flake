@@ -90,6 +90,8 @@
             hqdn3d = pkgs.callPackage ./pkgs/vapoursynth-plugins/hqdn3d { };
 
             imwri = pkgs.callPackage ./pkgs/vapoursynth-plugins/imwri { };
+
+            knlmeanscl = pkgs.callPackage ./pkgs/vapoursynth-plugins/knlmeanscl { };
           };
         };
       }
