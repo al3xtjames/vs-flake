@@ -49,6 +49,8 @@
 
             dctfilter = pkgs.callPackage ./pkgs/vapoursynth-plugins/dctfilter { };
 
+            deblock = pkgs.callPackage ./pkgs/vapoursynth-plugins/deblock { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
