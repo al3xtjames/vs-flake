@@ -100,6 +100,8 @@
 
             fft3dfilter = pkgs.callPackage ./pkgs/vapoursynth-plugins/fft3dfilter { };
 
+            fgrain-cuda = pkgs.callPackage ./pkgs/vapoursynth-plugins/fgrain-cuda { };
+
             fillborders = pkgs.callPackage ./pkgs/vapoursynth-plugins/fillborders { };
 
             fluxsmooth = pkgs.callPackage ./pkgs/vapoursynth-plugins/fluxsmooth { };
