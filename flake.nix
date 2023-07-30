@@ -1,22 +1,26 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
+  outputs = { self, nixpkgs }:
+    let
+      inherit (nixpkgs) lib;
 
-        selfPackages = self.packages.${system};
-        inherit (selfPackages) vapoursynthLibs vapoursynthPlugins;
-      in
-      {
-        packages = {
+      systems = [ "x86_64-linux" ];
+      forEachSystem = systems: f: lib.genAttrs systems (system: f system);
+      forAllSystems = forEachSystem systems;
+    in {
+      packages = forAllSystems (system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+
+          selfPackages = self.packages.${system};
+          inherit (selfPackages) vapoursynthLibs vapoursynthPlugins;
+        in {
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
 
@@ -140,7 +144,7 @@
 
             znedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/znedi3 { };
           };
-        };
-      }
-    );
+        }
+      );
+    };
 }
