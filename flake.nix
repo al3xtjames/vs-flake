@@ -76,6 +76,8 @@
             }).override {
               ffmpeg_4 = pkgs.ffmpeg_6;
             };
+
+            fft3dfilter = pkgs.callPackage ./pkgs/vapoursynth-plugins/fft3dfilter { };
           };
         };
       }
