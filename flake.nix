@@ -41,6 +41,8 @@
 
             bmdegrain = pkgs.callPackage ./pkgs/vapoursynth-plugins/bmdegrain { };
 
+            bwdif = pkgs.callPackage ./pkgs/vapoursynth-plugins/bwdif { };
+
             ffms = (pkgs.ffms.overrideAttrs {
               version = "unstable-2023-07-22";
               src = pkgs.fetchFromGitHub {
