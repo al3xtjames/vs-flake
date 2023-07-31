@@ -6,10 +6,12 @@
   nixConfig = {
     extra-substituters = [
       "https://cuda-maintainers.cachix.org"
+      "https://vs-flake.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      "vs-flake.cachix.org-1:bIru8beu4KuF9g1dLgKq5z928m5pSpxIU/ZqwqXlnmQ="
     ];
   };
 
