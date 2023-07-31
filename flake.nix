@@ -216,6 +216,10 @@
                 inherit vapoursynthPlugins;
               };
 
+              vsdehalo = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsdehalo {
+                inherit vapoursynthPlugins;
+              };
+
               vsdeinterlace = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsdeinterlace {
                 inherit vapoursynthPlugins;
               };
