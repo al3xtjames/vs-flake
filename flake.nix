@@ -36,6 +36,10 @@
           python3Packages = pkgs.vapoursynth.python3.pkgs;
           inherit (self.legacyPackages.${system}) vapoursynthPlugins;
         in {
+          dovi_tool = pkgs.callPackage ./pkgs/dovi_tool {
+            inherit (pkgs.darwin.apple_sdk_11_0.frameworks) CoreText;
+          };
+
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
 
