@@ -33,10 +33,8 @@
     in {
       packages = forAllSystems (system: pkgs:
         let
-          selfPackages = self.packages.${system};
           python3Packages = pkgs.vapoursynth.python3.pkgs;
-
-          inherit (selfPackages) vapoursynthLibs vapoursynthPlugins;
+          inherit (self.legacyPackages.${system}) vapoursynthPlugins;
         in {
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
@@ -46,7 +44,14 @@
           };
 
           yuuno = python3Packages.callPackage ./pkgs/yuuno { };
+        }
+      );
 
+      legacyPackages = forAllSystems (system: pkgs:
+        let
+          python3Packages = pkgs.vapoursynth.python3.pkgs;
+          inherit (self.legacyPackages.${system}) vapoursynthLibs vapoursynthPlugins;
+        in {
           vapoursynthLibs = {
             vsfilterscript = pkgs.callPackage ./pkgs/vapoursynth-libs/vsfilterscript { };
           };
@@ -283,14 +288,15 @@
       devShells = forAllSystems (system: pkgs:
         let
           selfPackages = self.packages.${system};
+          inherit (self.legacyPackages.${system}) vapoursynthPlugins;
           allPackages = lib.filter
             (x: lib.attrsets.isDerivation x && x != selfPackages.yuuno)
             (lib.attrValues selfPackages);
 
           allPlugins = lib.filter
             (x: lib.attrsets.isDerivation x)
-            (lib.attrValues selfPackages.vapoursynthPlugins) ++
-            lib.attrValues selfPackages.vapoursynthPlugins.pythonModules;
+            (lib.attrValues vapoursynthPlugins) ++
+            lib.attrValues vapoursynthPlugins.pythonModules;
         in {
           default = pkgs.mkShell {
             buildInputs = with pkgs; allPackages ++ [

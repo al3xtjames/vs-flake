@@ -6,13 +6,13 @@ Yet another attempt at packaging VapourSynth plugins for Nix.
 ### Usage
 
 This repo uses Nix flakes. Derivations for VapourSynth plugins are provided in
-`packages.${system}.vapoursynthPlugins`. Python modules are provided under
-`packages.${system}.vapoursynthPlugins.pythonModules`. These derivations can be
-passed to `vapoursynth.withPlugins` to build a VapourSynth environment.
+`legacyPackages.${system}.vapoursynthPlugins`. Python modules are provided under
+`legacyPackages.${system}.vapoursynthPlugins.pythonModules`. These derivations
+can be passed to `vapoursynth.withPlugins` to build a VapourSynth environment.
 
 In addition to VapourSynth plugins, the flake also includes a derivation for
-[Yuuno][1]. Like `vapoursynth`, plugins can be passed to Yuuno with
-`yuuno.withPlugins`.
+[Yuuno][1] under `packages.${system}.yuuno`. Like `vapoursynth`, plugins can be
+passed to Yuuno with `yuuno.withPlugins`.
 
 The flake also defines a dev shell with all of the packages it provides. This
 shell can be run with `nix develop`:
@@ -30,9 +30,6 @@ Options: -
 
 Only `x86_64-linux` is supported as [VapourSynth in nixpkgs is broken on
 Darwin][2].
-
-Flakes don't seem to support nested attribute sets under `packages.${system}`,
-so commands such as `nix flake check` and `nix flake show` won't work.
 
 ### Credits
 
