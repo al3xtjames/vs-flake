@@ -47,6 +47,10 @@
             inherit vapoursynthPlugins;
           };
 
+          hdr10plus_tool = pkgs.callPackage ./pkgs/hdr10plus_tool {
+            inherit (pkgs.darwin.apple_sdk_11_0.frameworks) CoreText;
+          };
+
           yuuno = python3Packages.callPackage ./pkgs/yuuno { };
         }
       );
