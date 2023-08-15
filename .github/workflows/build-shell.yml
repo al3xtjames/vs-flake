@@ -24,7 +24,7 @@ jobs:
         run: |
           curl -O --output-dir /tmp -L \
             'https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/secure/8.5.3/tars/TensorRT-8.5.3.1.Linux.x86_64-gnu.cuda-11.8.cudnn8.6.tar.gz' \
-            -H 'cookie: remember_user_token=${{ secrets.NVIDIA_USER_TOKEN }}'
+            -H 'cookie: _devzone_session=${{ secrets.NVIDIA_DEVZONE_SESSION }}'
       - if: steps.cache-tensorrt-sdk.outputs.cache-hit != 'true'
         uses: actions/cache/save@v3
         with:
