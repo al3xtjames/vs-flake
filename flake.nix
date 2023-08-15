@@ -310,6 +310,7 @@
             buildInputs = with pkgs; allPackages ++ [
               (vapoursynth.withPlugins allPlugins)
               (selfPackages.yuuno.withPlugins allPlugins)
+              ffmpeg_6
             ];
           };
         }
