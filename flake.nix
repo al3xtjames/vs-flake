@@ -36,6 +36,8 @@
           python3Packages = pkgs.vapoursynth.python3.pkgs;
           inherit (self.legacyPackages.${system}) vapoursynthPlugins;
         in {
+          ass2bdnxml = pkgs.callPackage ./pkgs/ass2bdnxml { };
+
           dovi_tool = pkgs.callPackage ./pkgs/dovi_tool {
             inherit (pkgs.darwin.apple_sdk_11_0.frameworks) CoreText;
           };
