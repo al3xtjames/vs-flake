@@ -43,6 +43,10 @@
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
 
+          getfnative = python3Packages.callPackage ./pkgs/getnative {
+            inherit vapoursynthPlugins;
+          };
+
           getnative = python3Packages.callPackage ./pkgs/getnative {
             inherit vapoursynthPlugins;
           };
