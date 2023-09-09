@@ -57,6 +57,10 @@
             inherit (pkgs.darwin.apple_sdk_11_0.frameworks) CoreText;
           };
 
+          x265 = pkgs.callPackage ./pkgs/x265 {
+            inherit (pkgs.llvmPackages_16) stdenv;
+          };
+
           yuuno = python3Packages.callPackage ./pkgs/yuuno { };
         }
       );

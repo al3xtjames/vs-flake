@@ -1,0 +1,13 @@
+diff --git a/test/testharness.h b/test/testharness.h
+index 5b8e274b1..cce486621 100644
+--- a/test/testharness.h
++++ b/test/testharness.h
+@@ -69,7 +69,7 @@ protected:
+ #include <intrin.h>
+ #elif HAVE_RDTSC
+ #include <intrin.h>
+-#elif (!defined(__APPLE__) && (defined (__GNUC__) && (defined(__x86_64__) || defined(__i386__))))
++#elif (defined (__GNUC__) && (defined(__x86_64__) || defined(__i386__)))
+ #include <x86intrin.h>
+ #elif ( !defined(__APPLE__) && defined (__GNUC__) && defined(__ARM_NEON__))
+ #include <arm_neon.h>
