@@ -2,6 +2,7 @@
 , stdenv
 , fetchFromGitHub
 , libass
+, libimagequant
 , libpng
 , meson
 , ninja
@@ -10,13 +11,13 @@
 
 stdenv.mkDerivation rec {
   pname = "ass2bdnxml";
-  version = "0.4";
+  version = "0.5";
 
   src = fetchFromGitHub {
     owner = "cubicibo";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-CdXhG8YtYKtTRJmkIny+2lqy0X2Co0rzMwIlxRUNoNQ=";
+    hash = "sha256-UViySyxJwBktOmqMGE4twAvpGkPW29k5qbvQD30V5kQ=";
   };
 
   nativeBuildInputs = [
@@ -27,6 +28,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     libass
+    libimagequant
     libpng
   ];
 
