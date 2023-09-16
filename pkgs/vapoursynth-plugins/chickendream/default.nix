@@ -1,6 +1,6 @@
 { lib
 , stdenv
-, fetchFromGitHub
+, fetchFromGitLab
 , autoreconfHook
 }:
 
@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
   pname = "vapoursynth-chickendream";
   version = "2";
 
-  src = fetchFromGitHub {
+  src = fetchFromGitLab {
     owner = "EleonoreMizo";
     repo = "chickendream";
     rev = "r${version}";
@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Realistic film grain generator, plug-in for Vapoursynth and Avisynth+";
-    homepage = "https://github.com/EleonoreMizo/chickendream";
+    homepage = "https://gitlab.com/EleonoreMizo/chickendream";
     license = licenses.wtfpl;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
