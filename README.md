@@ -1,7 +1,8 @@
 vs-flake
 ========
 
-Yet another attempt at packaging VapourSynth plugins for Nix.
+Yet another attempt at packaging VapourSynth plugins (and other multimedia
+tools) for Nix.
 
 ### Usage
 
