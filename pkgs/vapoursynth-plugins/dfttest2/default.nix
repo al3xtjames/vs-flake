@@ -14,12 +14,12 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "vapoursynth-dfttest2";
-  version = "unstable-2023-07-06";
+  version = "6";
 
   src = fetchFromGitHub {
     owner = "AmusementClub";
     repo = "vs-dfttest2";
-    rev = "082fe6a899acd2c6004216efcd9f60642cd5c8a2";
+    rev = "v${version}";
     hash = "sha256-sRBuyaKVcCtqMpzsyQvRRGffxofsh1QyZLsIqVXv+hc=";
     fetchSubmodules = true;
   };
