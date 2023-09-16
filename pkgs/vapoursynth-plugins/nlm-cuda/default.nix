@@ -8,13 +8,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-nlm-cuda";
-  version = "unstable-2023-07-06";
+  version = "1";
 
   src = fetchFromGitHub {
     owner = "AmusementClub";
     repo = "vs-nlm-cuda";
-    rev = "81019c977745b5d1a79d63073536564c42883762";
-    hash = "sha256-skE6IgLsl/uu/wzNkS2eeLP/9W8Zap/WfsZ1c+4xlAg=";
+    rev = "v${version}";
+    hash = "sha256-VxIe3ec0Hxgcd6HTDbZ9zx6Ss0H2eOtRVLq1ftIwRPY=";
   };
 
   nativeBuildInputs = [
