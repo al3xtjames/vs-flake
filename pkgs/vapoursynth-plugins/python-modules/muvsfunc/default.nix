@@ -37,14 +37,14 @@ let
 in
 buildPythonPackage rec {
   pname = "muvsfunc";
-  version = "unstable-2023-07-06";
+  version = "unstable-2023-09-05";
   format = "other";
 
   src = fetchFromGitHub {
     owner = "WolframRhodium";
     repo = pname;
-    rev = "e90bd4e7157aaf32c6ec61ddc60191e75259c3d7";
-    hash = "sha256-RtWhTmLr8mTvKE5fRh8n1cp9H5so4JKQMrGjGK2MOXw=";
+    rev = "fd9f0413ba3e3e2acb0f412755bac875395f4100";
+    hash = "sha256-rif4qXWgR7Gjx504IerILlC7ccl3JgceOOU7ujrE+gs=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs ++ [
