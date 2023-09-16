@@ -27,7 +27,7 @@ buildPythonPackage rec {
 
   unittestFlags = [
     "-s"
-    "testz"
+    "tests"
   ];
 
   pythonImportsCheck = [
