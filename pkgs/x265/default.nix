@@ -57,7 +57,7 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "x265";
-  version = "3.5-104-g8f18e3ad3";
+  version = "3.5-150-g343ac2692";
 
   outputs = [ "out" "dev" ];
 
@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
     owner = "multicoreware";
     repo = "x265_git";
     rev = version;
-    hash = "sha256-8aDNm60/MPuT20981TVUh52uXG7dCJfeUX/quANtDO8=";
+    hash = "sha256-CgKVwD5ZD3Y6xv8znWr99cPS3Q5qDSVRAvmeVTE0qxE=";
   };
 
   sourceRoot = "source/source";
