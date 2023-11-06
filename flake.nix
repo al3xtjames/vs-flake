@@ -124,12 +124,12 @@
             eedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi3 { };
 
             ffms = (pkgs.ffms.overrideAttrs {
-              version = "unstable-2023-07-22";
+              version = "unstable-2023-10-12";
               src = pkgs.fetchFromGitHub {
                 owner = "FFMS";
                 repo = "ffms2";
-                rev = "ef243ab40b8d4b6d18874c6cef0da1a2f55a6a45";
-                hash = "sha256-w2rkHYOMyBMA8tdAoBtRkMvxrNXYuUbXJ4aimQXkl5w=";
+                rev = "f20827cf280b669321cd5b62e01d744bc68c21fc";
+                hash = "sha256-Ec9A8jD4lj5hIJ5qwzOzVLBI8bzW4AP8Mx1//XP1V18=";
               };
             }).override {
               ffmpeg_4 = pkgs.ffmpeg_6;
