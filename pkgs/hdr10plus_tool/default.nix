@@ -15,16 +15,16 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "hdr10plus_tool";
-  version = "unstable-2023-07-26";
+  version = "unstable-2023-10-18";
 
   src = fetchFromGitHub {
     owner = "quietvoid";
     repo = pname;
-    rev = "fa9a55468a1db78c1b409d3fc43f6e7f2d51d3c5";
-    hash = "sha256-/z4uW1T9T8rJFWQe7CttRIKyEGxupN8YquBUDDo7I5g=";
+    rev = "5181cf8e05148929b31b34c0d76aa8d8f2bca34a";
+    hash = "sha256-4kLaXjTB+P1kXUf2SadG6FF4Rpyi6urgzHnFE0A0zkA=";
   };
 
-  cargoHash = "sha256-jo637NXX2ODqHZp18Qzw5KIoro6BBjJYkXvtmZt/VuQ=";
+  cargoHash = "sha256-DNDdp/Ucj8IocYT4AyvR700iCSGALvfVo3QjjngH0O8=";
 
   postPatch = lib.optionals stdenv.isDarwin ''
     substituteInPlace tests/metadata/plot.rs --replace \
