@@ -15,16 +15,16 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "dovi_tool";
-  version = "unstable-2023-07-26";
+  version = "2.1.0";
 
   src = fetchFromGitHub {
     owner = "quietvoid";
     repo = pname;
-    rev = "038a602adc89a99d7f0eee3cde51fd9770bd48ca";
-    hash = "sha256-sBsKh8IPPcg8r/zj6tPTM/mbuYVnhLtXxESy/TRKVec=";
+    rev = version;
+    hash = "sha256-QbesKblEUsWgdmocB+QJqa/hbpHNTTPujvGNxdorcuE=";
   };
 
-  cargoHash = "sha256-FAiWl9WSRd/4feSzXWurTGXTugg56+DdlY5es+r0tqo=";
+  cargoHash = "sha256-cO2ot25lnSBBrw5JCSFzJvJPZyU5pwDh1X5pFrkswuc=";
 
   postPatch = lib.optionals stdenv.isDarwin ''
     substituteInPlace tests/rpu/plot.rs --replace \
