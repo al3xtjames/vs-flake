@@ -11,13 +11,13 @@
 
 stdenv.mkDerivation rec {
   pname = "ass2bdnxml";
-  version = "0.6";
+  version = "0.6a";
 
   src = fetchFromGitHub {
     owner = "cubicibo";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-HXaLIlZl5A77BZOibcE6nZ2Pe9ZEPFGYjGpA6PtL7XM=";
+    hash = "sha256-ZhuVvnRIJF83Q+EYoMVK1TYu3B62TpZGObza2tJXsNg=";
   };
 
   nativeBuildInputs = [
