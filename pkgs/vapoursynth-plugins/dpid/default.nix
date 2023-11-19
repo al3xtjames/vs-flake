@@ -9,13 +9,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-dpid";
-  version = "6";
+  version = "6-APIv4";
 
   src = fetchFromGitHub {
-    owner = "WolframRhodium";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "r${version}";
-    hash = "sha256-N+n4Ch2BsS4dJVKcZ2VbseeXw9e3ffSeG8wd244Y2o4=";
+    hash = "sha256-N19tkX//meN6x8S3s5lhCKfazUFmEpOjxGsky/KS6p4=";
   };
 
   postPatch = ''
@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Rapid, Detail-Preserving Image Downscaler for VapourSynth";
-    homepage = "https://github.com/WolframRhodium/VapourSynth-dpid";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/VapourSynth-dpid";
     license = licenses.bsd3;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
