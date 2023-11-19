@@ -10,13 +10,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-dctfilter";
-  version = "2.1";
+  version = "3.1A";
 
   src = fetchFromGitHub {
-    owner = "HomeOfVapourSynthEvolution";
+    owner = "AmusementClub";
     repo = pname;
     rev = "r${version}";
-    hash = "sha256-AORb/bBVT+k9fklM4Mjo0NTqQP4QcY4gvfZLJGATVAw=";
+    hash = "sha256-B5Yunb/ZdaCMq4t2Bhh2TzA0U+juarM8eyfQ2UVSqTc=";
   };
 
   postPatch = ''
@@ -38,7 +38,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Renewed DCTFilter filter for VapourSynth";
-    homepage = "https://github.com/HomeOfVapourSynthEvolution/VapourSynth-DCTFilter";
+    homepage = "https://github.com/AmusementClub/VapourSynth-DCTFilter";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
