@@ -10,13 +10,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-bm3dcuda";
-  version = "2.13.test";
+  version = "2.13";
 
   src = fetchFromGitHub {
     owner = "WolframRhodium";
     repo = pname;
     rev = "R${version}";
-    hash = "sha256-/ng+QAW2ZlrnfCjG9dKsG68fsfm0ZL3bGVCktnXlDlw=";
+    hash = "sha256-P9UmhPBs7ZHet47aUBtCLHIWXzlZhgygp97wRO7wAY8=";
   };
 
   nativeBuildInputs = [
