@@ -57,7 +57,7 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "x265";
-  version = "3.5-150-g343ac2692";
+  version = "3.5-151-g8ee01d45b";
 
   outputs = [ "out" "dev" ];
 
@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
     owner = "multicoreware";
     repo = "x265_git";
     rev = version;
-    hash = "sha256-CgKVwD5ZD3Y6xv8znWr99cPS3Q5qDSVRAvmeVTE0qxE=";
+    hash = "sha256-tAx9qJvpmi64snQEiNtuZQMSVXlex3YtHsCw5lGUQPQ=";
   };
 
   sourceRoot = "source/source";
@@ -75,11 +75,6 @@ stdenv.mkDerivation rec {
     (fetchpatch {
       url = "https://raw.githubusercontent.com/gentoo/gentoo/9591e8238da4f5ddab702a01f93fba05943f2a0d/media-libs/x265/files/x265-9999-arm.patch";
       hash = "sha256-p0BUv+/giozEelzKAQzhb+mgOiD613HzNcCS3XwsM9c=";
-    })
-    # More complete PPC64 matches :
-    (fetchpatch {
-      url = "https://raw.githubusercontent.com/gentoo/gentoo/9591e8238da4f5ddab702a01f93fba05943f2a0d/media-libs/x265/files/x265-9999-ppc64.patch";
-      hash = "sha256-NuMhz97KWY37naNvU21kt4dlRBmy9jx4HNkhmIENiRk=";
     })
     # Namespace functions for multi-bitdepth builds so that libraries are self-contained (and tests succeeds) :
     (fetchpatch {
