@@ -1,42 +1,42 @@
 { lib
 , stdenv
 , fetchFromGitHub
+, meson
+, ninja
 , pkg-config
-, which
 , vapoursynth
 }:
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-bilateral";
-  version = "unstable-2015-06-29";
+  version = "unstable-2023-06-27";
 
   src = fetchFromGitHub {
-    owner = "HomeOfVapourSynthEvolution";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
-    rev = "5c246c08914661fa2711eba5b7e8ca383bf0b717";
-    hash = "sha256-whnL4U+kwv0m9jWkXIUYhnZ2BAn05IugfBZj9lGupyI=";
+    rev = "1a2a4f6a70a6e0ef2fc62009c9f5ae1b5ed56ebe";
+    hash = "sha256-wGuoar8TNkO/HJo5LA33IehXVRd/749oQ17AKZ76PAo=";
   };
 
+  postPatch = ''
+    substituteInPlace meson.build --replace \
+      "vapoursynth_dep.get_variable(pkgconfig: 'libdir')" \
+      "get_option('libdir')"
+  '';
+
   nativeBuildInputs = [
+    meson
+    ninja
     pkg-config
-    which
   ];
 
   buildInputs = [
     vapoursynth
   ];
 
-  dontAddPrefix = true;
-
-  configureFlags = [
-    "--install=${placeholder "out"}/lib/vapoursynth"
-  ];
-
-  enableParallelBuilding = true;
-
   meta = with lib; {
     description = "Bilateral filter for VapourSynth";
-    homepage = "https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Bilateral";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-Bilateral";
     license = licenses.gpl3Plus;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
