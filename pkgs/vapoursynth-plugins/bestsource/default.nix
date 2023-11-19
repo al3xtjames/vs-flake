@@ -19,13 +19,13 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "vapoursynth-bestsource";
-  version = "unstable-2023-07-12";
+  version = "unstable-2023-10-10";
 
   src = fetchFromGitHub {
     owner = "vapoursynth";
     repo = "bestsource";
-    rev = "ef18d7f4dbbb77a2b2f5fdbb95d100f070c0ca38";
-    hash = "sha256-+7ty5sJjt2r4mzmBFlyJJM9xixn4XnQ4weiGlQGwZh0=";
+    rev = "20e2135c088f3ae88438fabd35699ffcc8b1dad3";
+    hash = "sha256-MZXPLNO2jPWeMXez6qS+KWOmmyofjyGjOWcZIW5CwNY=";
   };
 
   postUnpack = ''
