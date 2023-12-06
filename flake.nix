@@ -62,6 +62,10 @@
           python3Packages = pkgs.vapoursynth.python3.pkgs;
           inherit (self.legacyPackages.${system}) vapoursynthLibs vapoursynthPlugins;
         in {
+          python3Packages = {
+            stgpytools = python3Packages.callPackage ./pkgs/python3/stgpytools { };
+          };
+
           vapoursynthLibs = {
             vsfilterscript = pkgs.callPackage ./pkgs/vapoursynth-libs/vsfilterscript { };
           };
