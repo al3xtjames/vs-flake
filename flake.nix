@@ -45,14 +45,6 @@
           # Available outside of vapoursynthPlugins as it provides ffmsindex
           ffms = vapoursynthPlugins.ffms;
 
-          getfnative = python3Packages.callPackage ./pkgs/getnative {
-            inherit vapoursynthPlugins;
-          };
-
-          getnative = python3Packages.callPackage ./pkgs/getnative {
-            inherit vapoursynthPlugins;
-          };
-
           hdr10plus_tool = pkgs.callPackage ./pkgs/hdr10plus_tool {
             inherit (pkgs.darwin.apple_sdk_11_0.frameworks) CoreText;
           };
