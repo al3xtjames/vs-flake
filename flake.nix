@@ -211,10 +211,6 @@
                 inherit vapoursynthPlugins;
               };
 
-              descale = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/descale {
-                inherit vapoursynthPlugins;
-              };
-
               dfttest2 = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/dfttest2 {
                 inherit vapoursynthPlugins;
               };

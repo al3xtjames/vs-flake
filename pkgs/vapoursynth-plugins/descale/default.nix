@@ -9,13 +9,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-descale";
-  version = "unstable-2023-04-01";
+  version = "unstable-2023-11-08";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
-    repo = "descale";
-    rev = "8c53f5d1297dee286e5a854ae5731103614a0583";
-    hash = "sha256-bDSoEk1WGvMJ12epXOh7+eWf6HblFpz0Z7STmggpQWw=";
+    owner = "Jaded-Encoding-Thaumaturgy";
+    repo = "vapoursynth-descale";
+    rev = "672bdc28c29c30e8ac7ce571a551fdc0b3a66193";
+    hash = "sha256-1fD/Q+UtEslK0cQq6m1zj5kwn/yrUf9tYqV7z5/smgo=";
   };
 
   postPatch = ''
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "VapourSynth plugin to undo upscaling";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/descale";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-descale";
     license = licenses.wtfpl;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
