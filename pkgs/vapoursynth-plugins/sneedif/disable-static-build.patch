@@ -1,0 +1,20 @@
+diff --git a/meson.build b/meson.build
+index aeafb03..f1b3932 100644
+--- a/meson.build
++++ b/meson.build
+@@ -29,7 +29,7 @@ sources = [
+ 
+ vapoursynth_dep = dependency('vapoursynth').partial_dependency(compile_args : true, includes : true)
+ 
+-boost_dep = dependency('boost', modules : ['filesystem', 'system'], static : true)
++boost_dep = dependency('boost', modules : ['filesystem', 'system'])
+ 
+ opencl_dep = dependency('OpenCL', required : false)
+ if not opencl_dep.found()
+@@ -48,6 +48,5 @@ endif
+ 
+ shared_module('sneedif', sources,
+   dependencies : deps,
+-  link_args: ['-static'],
+   gnu_symbol_visibility : 'hidden'
+ )

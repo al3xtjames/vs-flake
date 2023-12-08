@@ -176,6 +176,8 @@
 
             sangnom = pkgs.callPackage ./pkgs/vapoursynth-plugins/sangnom { };
 
+            sneedif = pkgs.callPackage ./pkgs/vapoursynth-plugins/sneedif { };
+
             subtext = pkgs.callPackage ./pkgs/vapoursynth-plugins/subtext { };
 
             tcanny = pkgs.callPackage ./pkgs/vapoursynth-plugins/tcanny { };
