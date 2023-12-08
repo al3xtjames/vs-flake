@@ -31,11 +31,11 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-denoise";
-  version = "2.4.0";
+  version = "2.5.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
     hash = "sha256-V0pNybw1FQGSVQBehZbQ08WWPLU6Ds0jxR0NvCZVYXg=";
@@ -57,7 +57,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "VapourSynth denoising, regression, and motion compensation functions";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-denoise";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-denoise";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
