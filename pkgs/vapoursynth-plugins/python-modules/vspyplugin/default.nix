@@ -16,14 +16,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-pyplugin";
-  version = "1.3.2";
+  version = "1.4.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-uFo8dk4fPyGq3YFCfw/BoPMe1IFJDW8liVrn641C4h0=";
+    hash = "sha256-XQAPVcYr2dU0fdfPsEfGQbRVHhEHJtq3/W/dseFmIm0=";
   };
 
   patches = [
@@ -48,7 +48,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "Package for simplifying writing VapourSynth plugins in python";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-pyplugin";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-pyplugin";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
