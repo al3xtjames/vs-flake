@@ -22,14 +22,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-masktools";
-  version = "1.1.2";
+  version = "1.2.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-RAG++RwcNcPSkN5T8tmgoh/2gXuGTMAqfgQgkIRlDmk=";
+    hash = "sha256-ojZroVGzG/QL3cvGlsZHb2BlyDRF5R87mMYD4KFgVds=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -48,7 +48,7 @@ buildPythonPackage rec {
       vs-masktools aims to provide tools and functions to manage, create, and
       manipulate masks in VapourSynth.
     '';
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-masktools";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-masktools";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
