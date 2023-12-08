@@ -3,22 +3,24 @@
 , fetchFromGitHub
 , vapoursynth
 , rich
+, stgpytools
 }:
 
 buildPythonPackage rec {
   pname = "vs-tools";
-  version = "2.3.0";
+  version = "3.1.0";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-Ui8MpSR4079SH3R8Wk7ZqUReoQPhMUV7io062tZTXrU=";
+    hash = "sha256-t3HO9tZnEz2YgSD7LCkPZuPznlPzya4NXSTusH78h5Q=";
   };
 
   propagatedBuildInputs = [
     rich
+    stgpytools
   ];
 
   nativeBuildInputs = [
@@ -31,7 +33,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "Functions and utils related to VapourSynth";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-tools";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-tools";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
