@@ -16,14 +16,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-exprtools";
-  version = "1.4.6";
+  version = "1.5.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-xj+snq1M1HRoGFFa3UK2DKb6Q9xMz3qBa1YDbizTSeA=";
+    hash = "sha256-cSuwyncdQnQtYWFL+qzwZ5hCnrZ4ESMB38skzef/XMk=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -38,7 +38,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "VapourSynth functions and helpers for writing RPN expressions";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-exprtools";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-exprtools";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
