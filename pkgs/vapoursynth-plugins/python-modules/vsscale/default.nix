@@ -24,14 +24,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-scale";
-  version = "1.9.1";
+  version = "2.0.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-NTK61Cttcr1RdtYFcW01dkRKhvsDfAy9eCJD0LdyKds=";
+    hash = "sha256-CWOpDsbFP3zHHLnYwKS366AO9WqDplwlUnVkZDefXLw=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -48,7 +48,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "VapourSynth (de)scaling functions";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-scale";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-scale";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
