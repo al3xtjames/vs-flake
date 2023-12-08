@@ -20,14 +20,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-rgtools";
-  version = "1.5.1";
+  version = "1.6.2";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-z3T1w6xolGEri7fnfk8A8RR+UlX5OQz/sHrX7L54UhU=";
+    hash = "sha256-6z06IUUPQyXaHjTZlDEewTZwiY2/05AW+GdjLgO5mwk=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -44,7 +44,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "Wrapper for RGVS, RGSF, and various other functions";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-rgtools";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-rgtools";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
