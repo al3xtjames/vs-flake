@@ -13,6 +13,7 @@ let
     eedi3
     nnedi3cl
     sangnom
+    sneedif
     znedi3
   ];
 
@@ -26,14 +27,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-aa";
-  version = "1.8.2";
+  version = "1.9.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-8RsegLN3rBEgibVzL1WHOgfpo68FsGkoBpf2uGCEl2Y=";
+    hash = "sha256-Lmv5gIyXaPSaju4ufZeSWVxvz6Siv2bFPvRieLPBFWo=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -48,7 +49,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "VapourSynth anti aliasing and scaling functions";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-aa";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-aa";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
