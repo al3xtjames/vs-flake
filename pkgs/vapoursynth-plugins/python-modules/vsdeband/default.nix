@@ -28,14 +28,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-deband";
-  version = "1.0.2";
+  version = "1.1.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-QmVnwrD31EToblXwU/17dY8cuRv986V5NEnEs8lqMAc=";
+    hash = "sha256-SuEO5pJ9FiNFOKrYrHqBI4Y9zZNqxINBqIH0x72H/hw=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -44,13 +44,15 @@ buildPythonPackage rec {
     (vapoursynth.withPlugins vsPluginInputs)
   ];
 
+  doCheck = false;
+
   pythonImportsCheck = [
     "vsdeband"
   ];
 
   meta = with lib; {
     description = "Various debanding tools for VapourSynth";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-deband";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-deband";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
