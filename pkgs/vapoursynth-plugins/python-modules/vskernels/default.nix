@@ -17,14 +17,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-kernels";
-  version = "2.4.1";
+  version = "3.1.0";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-oIVEw31MXQzNVvcKCNdgEzvN1Q9t+0r5y01yJHF7v/Y=";
+    hash = "sha256-GepGqhpCGmSg/1eVokoHy9fFViuUe9c0x3QkVVijny0=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -39,7 +39,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "Kernel objects for scaling and format conversion within VapourSynth";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-kernels";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-kernels";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
