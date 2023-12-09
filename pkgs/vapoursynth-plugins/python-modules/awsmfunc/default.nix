@@ -23,14 +23,14 @@ let
 in
 buildPythonPackage rec {
   pname = "awsmfunc";
-  version = "unstable-2023-07-20";
+  version = "unstable-2023-11-12";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "OpusGang";
     repo = pname;
-    rev = "0bdcb2d2f149676819471fbeaa606731ab2d833c";
-    hash = "sha256-7yooKBfMVfXj66PQ0wX2XCUBEZpvMgubahb2rA0HDgk=";
+    rev = "d46075c692877cea3ed0e31af64d082ece81c410";
+    hash = "sha256-32PgTmnHbV/DxX2VSwy5Tof2+XiJ12Xxcnm05UegwJk=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs ++ [
