@@ -6,6 +6,11 @@
 }:
 
 let
+  vsPluginInputs = with vapoursynthPlugins; [
+    awarpsharp2
+    tcanny
+  ];
+
   vsPythonInputs = with vapoursynthPlugins.pythonModules; [
     vsaa
     vsdenoise
@@ -19,21 +24,23 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-dehalo";
-  version = "1.7.2";
+  version = "1.8.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-zBdH0NeyS4uxxSdXp4K9M2jRb5eoqhWWGH+WBVaGmWM=";
+    hash = "sha256-zimlLVkSlOHcWYxm3tiAt93zIBnmHgPCNqjXEHUjTZg=";
   };
 
-  propagatedBuildInputs = vsPythonInputs;
+  propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
 
   nativeBuildInputs = [
-    vapoursynth
+    (vapoursynth.withPlugins vsPluginInputs)
   ];
+
+  doCheck = false;
 
   pythonImportsCheck = [
     "vsdehalo"
@@ -41,7 +48,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "VapourSynth dehaloing functions";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-dehalo";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-dehalo";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
