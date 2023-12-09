@@ -4,7 +4,7 @@
 , meson
 , ninja
 , pkg-config
-, llvm
+, llvmPackages_15
 , vapoursynth
 }:
 
@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    llvm
+    llvmPackages_15.libllvm
     vapoursynth
   ];
 
