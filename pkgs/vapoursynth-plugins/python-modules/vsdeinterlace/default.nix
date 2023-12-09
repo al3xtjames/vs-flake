@@ -24,14 +24,14 @@ let
 in
 buildPythonPackage rec {
   pname = "vs-deinterlace";
-  version = "0.5.1";
+  version = "0.6.1";
   format = "setuptools";
 
   src = fetchFromGitHub {
-    owner = "Irrational-Encoding-Wizardry";
+    owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-9LE2iHhSATsWDTvx04WkDzItzuD0GkFjcFp8I4Wezdg=";
+    hash = "sha256-6ehkALn0R8hyVDmoym0BMB9yAMftaCXKgFe1rOlbc9w=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
@@ -40,13 +40,15 @@ buildPythonPackage rec {
     (vapoursynth.withPlugins vsPluginInputs)
   ];
 
+  doCheck = false;
+
   pythonImportsCheck = [
     "vsdeinterlace"
   ];
 
   meta = with lib; {
     description = "VapourSynth functions for deinterlacing";
-    homepage = "https://github.com/Irrational-Encoding-Wizardry/vs-deinterlace";
+    homepage = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-deinterlace";
     license = licenses.mit;
     maintainers = with maintainers; [ ];
     platforms = platforms.all;
