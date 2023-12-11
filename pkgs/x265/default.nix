@@ -2,7 +2,7 @@
 , stdenv
 , fetchFromBitbucket
 , fetchpatch
-, fetchurl
+, fetchzip
 , cmake
 , ffmpeg
 , nasm
@@ -50,9 +50,9 @@ let
     "-DENABLE_ALTIVEC=OFF" # https://bitbucket.org/multicoreware/x265_git/issues/320/fail-to-build-on-power8-le
   ];
 
-  bigBuckBunny = fetchurl {
-    url = "https://mirrors.ocf.berkeley.edu/blender/demo/movies/BBB/bbb_sunflower_1080p_30fps_normal.mp4";
-    hash = "sha256-rlEAWFCw/3V/5gw916EtdU080jl9h9k5tVI15Ff5dlg=";
+  bigBuckBunny = fetchzip {
+    url = "https://mirrors.ocf.berkeley.edu/blender/demo/movies/BBB/bbb_sunflower_1080p_30fps_normal.mp4.zip";
+    hash = "sha256-By/bBVwhx1998NxPc80s19IBc/iJeDQVYT5RDKP94Qk=";
   };
 in
 stdenv.mkDerivation rec {
@@ -152,9 +152,9 @@ stdenv.mkDerivation rec {
   '';
 
   profilingPhase = ''
-    ${ffmpeg}/bin/ffmpeg -i ${bigBuckBunny} -f yuv4mpegpipe - | ./x265 \
-      --pools $NIX_BUILD_CORES --y4m --input-depth 8 --profile main10 \
-      --level-idc 5.1 --vbv-bufsize 160000 --vbv-maxrate 160000 \
+    ${ffmpeg}/bin/ffmpeg -i ${bigBuckBunny}/bbb_sunflower_1080p_30fps_normal.mp4 \
+      -f yuv4mpegpipe - | ./x265 --pools $NIX_BUILD_CORES --y4m --input-depth 8 \
+      --profile main10 --level-idc 5.1 --vbv-bufsize 160000 --vbv-maxrate 160000 \
       --preset veryslow --no-open-gop --no-cutree --no-sao --rc-lookahead 60 \
       --ref 6 --bframes 16 --subme 5 --rskip 0 --no-strong-intra-smoothing \
       --qcomp 0.70 --aq-mode 3 --aq-strength 0.80 --psy-rd 2.00 \
