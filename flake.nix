@@ -113,6 +113,8 @@
 
             dpid = pkgs.callPackage ./pkgs/vapoursynth-plugins/dpid { };
 
+            dvdsrc2 = pkgs.callPackage ./pkgs/vapoursynth-plugins/dvdsrc2 { };
+
             eedi2 = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi2 { };
 
             eedi2cuda = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi2cuda { };
