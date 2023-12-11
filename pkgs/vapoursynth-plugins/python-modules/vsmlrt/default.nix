@@ -3,6 +3,7 @@
 , python
 , vapoursynth
 , vapoursynthPlugins
+, nix-update-script
 }:
 
 let
@@ -34,6 +35,8 @@ buildPythonPackage {
   pythonImportsCheck = [
     "vsmlrt"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "Efficient CPU/GPU/Vulkan ML Runtimes for VapourSynth";

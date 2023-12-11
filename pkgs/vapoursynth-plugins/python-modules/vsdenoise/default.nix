@@ -4,6 +4,7 @@
 , vapoursynth
 , vapoursynthPlugins
 , scipy
+, nix-update-script
 }:
 
 let
@@ -54,6 +55,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vsdenoise"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "VapourSynth denoising, regression, and motion compensation functions";

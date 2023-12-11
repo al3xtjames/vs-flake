@@ -3,6 +3,7 @@
 , fetchFromGitHub
 , vapoursynth
 , vapoursynthPlugins
+, nix-update-script
 }:
 
 let
@@ -41,6 +42,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vsrgtools"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "Wrapper for RGVS, RGSF, and various other functions";

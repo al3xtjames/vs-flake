@@ -4,6 +4,7 @@
 , fetchFromGitHub
 , vapoursynth
 , vapoursynthPlugins
+, nix-update-script
 }:
 
 let

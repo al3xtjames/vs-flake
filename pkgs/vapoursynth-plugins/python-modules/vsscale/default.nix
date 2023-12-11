@@ -3,6 +3,7 @@
 , fetchFromGitHub
 , vapoursynth
 , vapoursynthPlugins
+, nix-update-script
 }:
 
 let
@@ -45,6 +46,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vsscale"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "VapourSynth (de)scaling functions";

@@ -3,6 +3,7 @@
 , fetchFromGitHub
 , vapoursynth
 , vapoursynthPlugins
+, nix-update-script
 }:
 
 let
@@ -35,6 +36,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vsexprtools"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "VapourSynth functions and helpers for writing RPN expressions";

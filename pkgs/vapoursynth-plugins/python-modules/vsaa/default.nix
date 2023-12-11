@@ -3,6 +3,7 @@
 , fetchFromGitHub
 , vapoursynth
 , vapoursynthPlugins
+, nix-update-script
 }:
 
 let
@@ -46,6 +47,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vsaa"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "VapourSynth anti aliasing and scaling functions";

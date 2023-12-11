@@ -3,6 +3,7 @@
 , fetchFromGitHub
 , vapoursynth
 , vapoursynthPlugins
+, nix-update-script
 }:
 
 let
@@ -49,6 +50,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vsdeband"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "Various debanding tools for VapourSynth";

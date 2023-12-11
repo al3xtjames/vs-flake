@@ -7,6 +7,7 @@
 , numpy
 , config
 , cudaSupport ? config.cudaSupport
+, nix-update-script
 }:
 
 let
@@ -45,6 +46,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vspyplugin"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "Package for simplifying writing VapourSynth plugins in python";

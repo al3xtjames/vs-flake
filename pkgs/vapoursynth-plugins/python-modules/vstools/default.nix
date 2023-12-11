@@ -4,6 +4,7 @@
 , vapoursynth
 , rich
 , stgpytools
+, nix-update-script
 }:
 
 buildPythonPackage rec {
@@ -30,6 +31,8 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "vstools"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "Functions and utils related to VapourSynth";
