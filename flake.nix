@@ -26,6 +26,8 @@
           allowUnfree = true;
           cudaSupport = true;
         };
+
+        overlays = [ self.overlays.default ];
       };
 
       forEachSystem = systems: f: lib.genAttrs systems (system: f system (pkgsFor system));
@@ -62,10 +64,6 @@
           python3Packages = pkgs.vapoursynth.python3.pkgs;
           inherit (self.legacyPackages.${system}) vapoursynthLibs vapoursynthPlugins;
         in {
-          python3Packages = {
-            stgpytools = python3Packages.callPackage ./pkgs/python3/stgpytools { };
-          };
-
           vapoursynthLibs = {
             vsfilterscript = pkgs.callPackage ./pkgs/vapoursynth-libs/vsfilterscript { };
           };
@@ -287,9 +285,7 @@
                 inherit vapoursynthPlugins;
               };
 
-              vstools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstools {
-                inherit (self.legacyPackages.${system}.python3Packages) stgpytools;
-              };
+              vstools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstools { };
 
               vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
 
@@ -323,5 +319,19 @@
           };
         }
       );
+
+      overlays.default = (final: prev: {
+        pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+          (python-final: python-prev: {
+            stgpytools = python-final.callPackage ./pkgs/python3/stgpytools { };
+
+            # overridePythonAttrs isn't used as it doesn't appear to pass
+            # passthru attributes.
+            vapoursynth = python-final.callPackage ./pkgs/python3/vapoursynth {
+              inherit (prev) vapoursynth;
+            };
+          })
+        ];
+      });
     };
 }
