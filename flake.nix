@@ -285,13 +285,17 @@
                 inherit vapoursynthPlugins;
               };
 
-              vstools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstools { };
-
-              vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
+              vssource = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vssource {
+                inherit vapoursynthPlugins;
+              };
 
               vstaambk = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstaambk {
                 inherit vapoursynthPlugins;
               };
+
+              vstools = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vstools { };
+
+              vsutil = python3Packages.callPackage ./pkgs/vapoursynth-plugins/python-modules/vsutil { };
             };
           };
         }
