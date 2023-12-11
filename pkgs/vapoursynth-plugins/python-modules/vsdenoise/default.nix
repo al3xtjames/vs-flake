@@ -38,7 +38,7 @@ buildPythonPackage rec {
     owner = "Jaded-Encoding-Thaumaturgy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-V0pNybw1FQGSVQBehZbQ08WWPLU6Ds0jxR0NvCZVYXg=";
+    hash = "sha256-/MoW7IcVxzs4iMMRB3ElqJ5Xe9uEm4q9jmYIveGXaEs=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs ++ [
