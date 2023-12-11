@@ -9,7 +9,9 @@
 
 let
   vsPluginInputs = with vapoursynthPlugins; [
+    bestsource
     dvdsrc2
+    imwri
   ];
 
   vsPythonInputs = with vapoursynthPlugins.pythonModules; [
