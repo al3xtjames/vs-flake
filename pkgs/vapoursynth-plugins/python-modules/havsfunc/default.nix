@@ -40,14 +40,14 @@ let
 in
 buildPythonPackage rec {
   pname = "havsfunc";
-  version = "unstable-2023-05-07";
+  version = "unstable-2023-11-02";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "HomeOfVapourSynthEvolution";
     repo = pname;
-    rev = "0f6a7d9d9712d59b4e74e1e570fc6e3a526917f9";
-    hash = "sha256-PFiaRHtrh0ZC4ZJrk0yUekpKFXlm+zRanncMgwokQvI=";
+    rev = "f11d79c98589c9dcb5b10beec35b631db68b495c";
+    hash = "sha256-EOlo405e8ZgqEM1ZXCptSYhEPQHJO+fyWxK395CR9pw=";
   };
 
   propagatedBuildInputs = vsPluginInputs ++ vsPythonInputs;
