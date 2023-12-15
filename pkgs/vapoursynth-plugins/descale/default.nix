@@ -9,13 +9,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vapoursynth-descale";
-  version = "unstable-2023-11-08";
+  version = "9";
 
   src = fetchFromGitHub {
     owner = "Jaded-Encoding-Thaumaturgy";
     repo = "vapoursynth-descale";
-    rev = "672bdc28c29c30e8ac7ce571a551fdc0b3a66193";
-    hash = "sha256-1fD/Q+UtEslK0cQq6m1zj5kwn/yrUf9tYqV7z5/smgo=";
+    rev = "r${version}";
+    hash = "sha256-8OI9fCOq0XnX0rT291zV5gHxf97zNa5INfhS06xSX1I=";
   };
 
   postPatch = ''
