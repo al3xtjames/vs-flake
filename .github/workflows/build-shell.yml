@@ -18,21 +18,21 @@ jobs:
       - id: cache-tensorrt-sdk
         uses: actions/cache/restore@v3
         with:
-          path: /tmp/TensorRT-8.5.3.1.Linux.x86_64-gnu.cuda-11.8.cudnn8.6.tar.gz
+          path: /tmp/TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-11.8.tar.gz
           key: ${{ runner.os }}-tensorrt-sdk
       - if: steps.cache-tensorrt-sdk.outputs.cache-hit != 'true'
         run: |
           curl -O --output-dir /tmp -L \
-            'https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/secure/8.5.3/tars/TensorRT-8.5.3.1.Linux.x86_64-gnu.cuda-11.8.cudnn8.6.tar.gz' \
+            'https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/secure/8.6.1/tars/TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-11.8.tar.gz' \
             -H 'cookie: _devzone_session=${{ secrets.NVIDIA_DEVZONE_SESSION }}'
       - if: steps.cache-tensorrt-sdk.outputs.cache-hit != 'true'
         uses: actions/cache/save@v3
         with:
-          path: /tmp/TensorRT-8.5.3.1.Linux.x86_64-gnu.cuda-11.8.cudnn8.6.tar.gz
+          path: /tmp/TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-11.8.tar.gz
           key: ${{ steps.cache-tensorrt-sdk.outputs.cache-primary-key }}
       - run: |
-          nix-store --add-fixed sha256 /tmp/TensorRT-8.5.3.1.Linux.x86_64-gnu.cuda-11.8.cudnn8.6.tar.gz
-          rm /tmp/TensorRT-8.5.3.1.Linux.x86_64-gnu.cuda-11.8.cudnn8.6.tar.gz
+          nix-store --add-fixed sha256 /tmp/TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-11.8.tar.gz
+          rm /tmp/TensorRT-8.6.1.6.Linux.x86_64-gnu.cuda-11.8.tar.gz
       - uses: cachix/cachix-action@v12
         with:
           name: vs-flake
