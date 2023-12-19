@@ -23,14 +23,17 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     cmake
-    cudaPackages.autoAddOpenGLRunpathHook
-  ];
+  ] ++ (with cudaPackages; [
+    autoAddOpenGLRunpathHook
+    cuda_nvcc
+  ]);
 
   buildInputs = [
-    cudaPackages.cudatoolkit
-    cudaPackages.tensorrt
     vapoursynth
-  ];
+  ] ++ (with cudaPackages; [
+    cuda_cudart
+    tensorrt
+  ]);
 
   preConfigure = ''
     cd vstrt
