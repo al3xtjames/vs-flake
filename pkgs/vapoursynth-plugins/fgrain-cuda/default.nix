@@ -19,13 +19,16 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     cmake
-    cudaPackages.autoAddOpenGLRunpathHook
-  ];
+  ] ++ (with cudaPackages; [
+    autoAddOpenGLRunpathHook
+    cuda_nvcc
+  ]);
 
   buildInputs = [
-    cudaPackages.cudatoolkit
     vapoursynth
-  ];
+  ] ++ (with cudaPackages; [
+    cuda_cudart
+  ]);
 
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
