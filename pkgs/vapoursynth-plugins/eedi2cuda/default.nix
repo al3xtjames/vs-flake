@@ -34,14 +34,17 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     cmake
-    cudaPackages.autoAddOpenGLRunpathHook
-  ];
+  ] ++ (with cudaPackages; [
+    autoAddOpenGLRunpathHook
+    cuda_nvcc
+  ]);
 
   buildInputs = [
     boost
-    cudaPackages.cudatoolkit
     vapoursynth
-  ];
+  ] ++ (with cudaPackages; [
+    cuda_cudart
+  ]);
 
   cmakeFlags = [
     "-DBoost_INCLUDE_DIRS=${boost-sync}/include"
